@@ -1,5 +1,4 @@
 ---
-
 - name: Ensure apache SSL certificate directories exist
   become: true
   ansible.builtin.file:
@@ -42,7 +41,7 @@
   become: true
   ansible.builtin.copy:
     dest: "{{ item.certificate_key_file }}"
-    content: '{{ item.certificate_key }}'
+    content: "{{ item.certificate_key }}"
     owner: "{{ apache_ssl_certificate_key_file_owner }}"
     group: "{{ apache_ssl_certificate_key_file_group }}"
     mode: "{{ apache_ssl_certificate_key_file_mode }}"

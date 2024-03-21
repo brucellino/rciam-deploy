@@ -27,7 +27,7 @@
 - name: Configure Apache security settings (RedHat)
   become: true
   ansible.builtin.template:
-    src: "security.conf.j2"
+    src: security.conf.j2
     dest: "{{ apache_conf_path }}/conf.d/security.conf"
     owner: root
     group: root
@@ -44,7 +44,7 @@
 - name: Add Apache vhosts configuration (RedHat)
   become: true
   ansible.builtin.template:
-    src: "vhosts.conf.j2"
+    src: vhosts.conf.j2
     dest: "{{ apache_conf_path }}/sites-available/{{ apache_vhosts_filename }}"
     owner: root
     group: root

@@ -28,7 +28,7 @@
 - name: Configure Apache ports (Debian)
   become: true
   ansible.builtin.template:
-    src: "ports.conf.j2"
+    src: ports.conf.j2
     dest: "{{ apache_conf_path }}/ports.conf"
     owner: root
     group: root
@@ -39,7 +39,7 @@
 - name: Configure Apache security settings (Debian)
   become: true
   ansible.builtin.template:
-    src: "security.conf.j2"
+    src: security.conf.j2
     dest: "{{ apache_conf_path }}/conf-available/security.conf"
     owner: root
     group: root
@@ -58,7 +58,7 @@
 - name: Add Apache vhosts configuration (Debian)
   become: true
   ansible.builtin.template:
-    src: "vhosts.conf.j2"
+    src: vhosts.conf.j2
     dest: "{{ apache_conf_path }}/sites-available/{{ apache_vhosts_filename }}"
     owner: root
     group: root

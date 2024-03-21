@@ -1,5 +1,4 @@
 ---
-
 - name: Restart apache
   become: true
   ansible.builtin.service:
