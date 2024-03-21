@@ -23,7 +23,7 @@
   tags:
     - always
 
-#Create a task to take backup of the directory first
+# Create a task to take backup of the directory first
 - name: Backup comanage directory
   ansible.builtin.copy:
     src: "{{ comanage_current_dir.stat.lnk_target }}"
@@ -41,14 +41,14 @@
   tags:
     - always
 
-- name: COmanage clear cache
+- name: COmanage clear cache # noqa no-changed-when
   ansible.builtin.shell: Console/clearcache
   args:
     executable: /bin/bash
     chdir: "{{ comanage_path }}/app"
   become: true
   become_user: "{{ comanage_webserver_user }}"
-  ignore_errors: true
+  ignore_errors: true # noqa ignore-errors
   when:
     - comanage_current_dir.stat.exists
   tags:
