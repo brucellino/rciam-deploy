@@ -5,8 +5,7 @@
     state: present
     update_cache: true
   become: true
-  notify:
-    - restart apache
+  notify: Restart apache
 
 - name: Ensure Apache ssl module is installed (Redhat)
   ansible.builtin.yum:
@@ -15,5 +14,4 @@
     update_cache: true
   become: true
   when: apache_vhosts_ssl is defined and apache_vhosts_ssl|length > 0
-  notify:
-    - restart apache
+  notify: Restart apache

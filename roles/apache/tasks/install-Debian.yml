@@ -13,5 +13,4 @@
     name: "{{ apache_mods_installed }}"
     state: present
   become: true
-  notify:
-    - restart apache
+  notify: Restart apache
