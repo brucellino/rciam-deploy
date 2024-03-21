@@ -5,6 +5,7 @@
     state: directory
     owner: root
     group: root
+    mode: "0755"
   become: true
 
 - name: Ensure COmanage Registry source is cloned under root directory
@@ -13,7 +14,7 @@
     dest: "{{ comanage_root_dir }}/comanage-registry-{{ comanage_version }}"
     version: "{{ comanage_version }}"
     accept_hostkey: true
-  ignore_errors: true
+  ignore_errors: true # noqa ignore-errors
   become: true
 
 - name: Ensure symbolic link to current COmanage Registry installation exists
