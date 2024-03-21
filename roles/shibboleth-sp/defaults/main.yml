@@ -107,7 +107,7 @@ shibboleth_sp_session:
   # "none" is the default and does no limiting
   # N.B. Consider carefully before using this option as it can allow malicious
   # use of your SP as an open redirect
-  #redirect_limit: "none"
+  # redirect_limit: "none"
 
 # SSO settings. To allow for >1 IdP, remove entity_id property and adjust
 # discovery_url to point to discovery service.

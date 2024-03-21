@@ -50,8 +50,8 @@
 - name: Include Debian Install Tasks
   ansible.builtin.include_tasks: install-Debian.yml
   when: ansible_os_family == 'Debian'
-#- include: install-CentOS.yml
-#  when: ansible_os_family == 'CentOS
+# - include: install-CentOS.yml
+#   when: ansible_os_family == 'CentOS
 
 - name: Run OS-independent installation tasks
   ansible.builtin.include_tasks: install-common.yml
