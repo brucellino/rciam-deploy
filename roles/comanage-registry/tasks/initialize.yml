@@ -10,8 +10,12 @@
     - comanage-registry:init:db
 
 - name: Configure COmanage Registry platform admin and org identity pooling
-  ansible.builtin.command: Console/cake setup --admin-given-name "{{ comanage_admin.given_name }}" --admin-family-name "{{ comanage_admin.family_name }}" --admin-username
-    "{{ comanage_admin.username }}" --enable-pooling={{ comanage_org_identity_pooling }}
+  ansible.builtin.command: |-
+    Console/cake setup \
+    --admin-given-name "{{ comanage_admin.given_name }}" \
+    --admin-family-name "{{ comanage_admin.family_name }}" \
+    --admin-username "{{ comanage_admin.username }}" \
+    --enable-pooling={{ comanage_org_identity_pooling }}
   changed_when: false
   args:
     chdir: "{{ comanage_path }}/app"
