@@ -1,7 +1,6 @@
 # file: logrotateservers.yml
 #
 ---
-
 - hosts: all
   name: Deploy logrotate
   roles:
