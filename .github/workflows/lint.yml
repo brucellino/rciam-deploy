@@ -7,12 +7,12 @@ jobs:
   build:
     strategy:
       matrix:
-        ansible-lint-version:
+        version:
           - v6.22.2
           - v24.2.1
-    name: Ansible Lint
+    name: Ansible Lint ${{ matrix.version }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@${{ matrix.ansible-lint-version }}
+        uses: ansible/ansible-lint@${{ matrix.version }}
