@@ -64,7 +64,7 @@
         - common
         - never
 
-    - name: Configure timezone
+    - name: Configure timezone # noqa syntax-check[unknown-module]
       community.general.timezone:
         name: "{{ timezone }}"
       become: true

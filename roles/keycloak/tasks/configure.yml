@@ -174,10 +174,10 @@
       with_items: "{{ keycloak_plugins.group.add_to_realms }}"
       run_once: true
       vars:
-        - body_payload:
-            userAttribute: "{{ item.member_user_attribute_configuration.userAttribute }}"
-            urnNamespace: "{{ item.member_user_attribute_configuration.urnNamespace }}"
-            authority: "{{ item.member_user_attribute_configuration.authority }}"
+        body_payload:
+          userAttribute: "{{ item.member_user_attribute_configuration.userAttribute }}"
+          urnNamespace: "{{ item.member_user_attribute_configuration.urnNamespace }}"
+          authority: "{{ item.member_user_attribute_configuration.authority }}"
 
 - name: Configure Keycloak themes
   tags:

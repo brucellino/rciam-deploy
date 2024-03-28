@@ -35,7 +35,7 @@
         authzkeys_string: "{{ authzkeys.results | map(attribute='ansible_facts.authzkeys_list') | join('\n') }}"
 
     - name: Create key
-      ansible.posix.authorized_key:
+      ansible.posix.authorized_key: # noqa syntax-check[unknown-module]
         user: "{{ ansible_user }}"
         key: "{{ authzkeys_string }}"
         exclusive: true

@@ -3,7 +3,7 @@
 # After creating react configuration, github action will move the file to the react application
 # before building
 - name: Create react configuration file locally
-  ansible.builint.template:
+  ansible.builtin.template:
     src: react/config.json.j2
     dest: "{{ inventory_dir }}/files/config.{{ item.tenant }}.json"
     mode: "0400"

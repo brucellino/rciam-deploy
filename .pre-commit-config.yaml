@@ -27,8 +27,15 @@ repos:
       exclude: .github
       additional_dependencies:
         - ansible-core>=2.16.0
-      args: [
-        "--exclude", ".pre-commit-config.yaml"]
+      args:
+        - --exclude
+        - .pre-commit-config.yaml
+        - icingaagents.yml
+        # For some reason noqa is not being picked up on these files
+        - roles/common/handlers/main.yml
+        - authzkeys.yml
+        # ssp-modules is a bad name for a role
+        - roles/ssp-modules
 
 - repo: https://github.com/python-jsonschema/check-jsonschema
   rev: 0.28.0
