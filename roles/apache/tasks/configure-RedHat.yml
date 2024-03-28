@@ -72,7 +72,7 @@
 
 - name: Enable required Apache modules (RedHat)
   become: true
-  commnity.general.apache2_module:
+  community.general.apache2_module:
     state: present
     name: "{{ item }}"
   with_items: "{{ apache_mods_enabled }}"
