@@ -5,11 +5,10 @@ on:
     branches: ["devel", "master"]
 jobs:
   build:
-    strategy:
-      matrix:
-        version:
-          - v6.22.2
-          - v24.2.1
+  # Apparently, variables do not have a context until actions are actually executed
+  # so we cannot make a matrix  out of action versions.
+  # Thanks, Obama.
+  # See https://github.com/orgs/community/discussions/110550
     name: Ansible Lint ${{ matrix.version }}
     runs-on: ubuntu-latest
     steps:
