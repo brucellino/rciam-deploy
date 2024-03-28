@@ -28,9 +28,7 @@ repos:
       additional_dependencies:
         - ansible-core>=2.16.0
       args: [
-        "--exclude", ".pre-commit-config.yaml",
-        "--exclude", "roles/" # Exclude roles for now.
-      ]
+        "--exclude", ".pre-commit-config.yaml"]
 
 - repo: https://github.com/python-jsonschema/check-jsonschema
   rev: 0.28.0
