@@ -27,3 +27,9 @@ variable "db_user" {
   description = "Username to connect to DB"
   default     = "postgres"
 }
+
+variable "db_name" {
+  type        = string
+  description = "Name fo the PostGres database for RCIAM"
+  default     = "rciam"
+}
