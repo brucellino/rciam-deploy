@@ -2,12 +2,16 @@
 name: ansible-lint
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["devel", "master"]
 jobs:
   build:
+  # Apparently, variables do not have a context until actions are actually executed
+  # so we cannot make a matrix  out of action versions.
+  # Thanks, Obama.
+  # See https://github.com/orgs/community/discussions/110550
     name: Ansible Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@v6.22.2
+        uses: ansible/ansible-lint@v24.2.1
