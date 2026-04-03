@@ -24,7 +24,7 @@ passlib==1.7.4
 pathspec==0.12.1
 platformdirs==4.2.0
 pycparser==2.21
-Pygments==2.17.2
+Pygments==2.20.0
 PyYAML==6.0.1
 referencing==0.34.0
 resolvelib==1.0.1
